@@ -76,7 +76,7 @@ public class Model {
         return planosAntigos;
     }
 
-    public void setProfessor(String nome, String login, String senha, String matricula) {
+    public void addProfessor(String nome, String login, String senha, String matricula) {
         if (nome != null && login != null && senha != null && matricula != null) {
             professores.put(matricula, new Professor(nome, login, senha, matricula));
             notifica();
@@ -91,16 +91,15 @@ public class Model {
     }
 
     public void autenticarUsuario(String matricula, String senha) throws LoginInvalidoException {
-        // Possivel try catch
         if (professores.containsKey(matricula)) {
             if (professores.get(matricula).getSenha().equals(senha)) {
                 this.professorAutenticado = professores.get(matricula);
                 notifica();
             } else {
-                throw new LoginInvalidoException();
+                throw new LoginInvalidoException("Erro: Usuário ou senha inválidos");
             }
         } else {
-            throw new LoginInvalidoException();
+            throw new LoginInvalidoException("Erro: Usuário ou senha inválidos");
         }
     }
     

@@ -9,7 +9,6 @@ import utils.Observer;
 public class LoginView extends javax.swing.JFrame implements Observer {
     private Model model;
     private LoginController controller;
-    private WarningView warningView;
     
     public LoginView() {
         initComponents();
@@ -35,19 +34,8 @@ public class LoginView extends javax.swing.JFrame implements Observer {
         this.setVisible(true);
     };
     
-    public void mostraException(String msg) {
-        warningView = new WarningView();
-        warningView.setVisible(true);
-    }
-    
-    public void hide() {
-        model.detachObserver(this);
-        this.setVisible(false);
-    };
-    
     @Override
     public void update() {
-        System.out.println("Usuario conectado: " + model.getUsuarioAutenticado());
     }
     
     public String getMatricula() {
@@ -109,7 +97,7 @@ public class LoginView extends javax.swing.JFrame implements Observer {
         });
 
         jBtnLogin.setForeground(new java.awt.Color(30, 30, 30));
-        jBtnLogin.setName("LoginButton"); // NOI18N
+        jBtnLogin.setName("login"); // NOI18N
         jBtnLogin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jBtnLoginMouseClicked(evt);
@@ -132,7 +120,7 @@ public class LoginView extends javax.swing.JFrame implements Observer {
         );
 
         jBtnLimpar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBtnLimpar.setName("LimparButton"); // NOI18N
+        jBtnLimpar.setName("clear"); // NOI18N
         jBtnLimpar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jBtnLimparMouseClicked(evt);

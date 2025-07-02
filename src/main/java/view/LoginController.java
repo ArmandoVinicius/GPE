@@ -30,9 +30,12 @@ public class LoginController implements Observer {
                 try {
                     model.autenticarUsuario(view.getMatricula(), view.getSenha());
                     model.detachObserver(this);
-                    view.hide();
+                    DashboardView dv = new DashboardView();
+                    dv.init(model);
+                    view.dispose();
                 } catch (LoginInvalidoException e) {
-                    view.mostraException("Erro");
+                    WarningView wv = new WarningView(e.getMessage());
+                    wv.setVisible(true);
                 }
                 break;
             case "clear":
