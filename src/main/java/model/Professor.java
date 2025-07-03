@@ -4,7 +4,7 @@ package model;
  *
  * @author arman
  */
-class Professor extends Usuario{
+public class Professor extends Usuario{
   private String matricula;
 
   public Professor() {

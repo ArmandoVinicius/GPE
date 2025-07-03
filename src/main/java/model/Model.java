@@ -82,6 +82,13 @@ public class Model {
             notifica();
         }
     }
+    
+    public void addProfessor(Professor prof) {
+        if (prof != null) {
+            professores.put(prof.getMatricula(), prof);
+            notifica();
+        }
+    }
 
     public void setDisciplina(String nome, String codigo, String ementa) {
         if (nome != null && codigo != null && ementa != null) {

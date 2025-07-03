@@ -37,6 +37,8 @@ public class DashboardView extends javax.swing.JFrame implements Observer {
         jPanel1 = new javax.swing.JPanel();
         jLabelUserName = new javax.swing.JLabel();
         jLabelText = new javax.swing.JLabel();
+        jBtnDeslogar = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,6 +46,32 @@ public class DashboardView extends javax.swing.JFrame implements Observer {
 
         jLabelText.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabelText.setText("Seja bem vindo:");
+
+        jBtnDeslogar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnDeslogarMouseClicked(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Deslogar");
+
+        javax.swing.GroupLayout jBtnDeslogarLayout = new javax.swing.GroupLayout(jBtnDeslogar);
+        jBtnDeslogar.setLayout(jBtnDeslogarLayout);
+        jBtnDeslogarLayout.setHorizontalGroup(
+            jBtnDeslogarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jBtnDeslogarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE))
+        );
+        jBtnDeslogarLayout.setVerticalGroup(
+            jBtnDeslogarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jBtnDeslogarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -54,7 +82,11 @@ public class DashboardView extends javax.swing.JFrame implements Observer {
                 .addComponent(jLabelText)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelUserName)
-                .addContainerGap(312, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(181, Short.MAX_VALUE)
+                .addComponent(jBtnDeslogar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(175, 175, 175))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -63,7 +95,9 @@ public class DashboardView extends javax.swing.JFrame implements Observer {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelText)
                     .addComponent(jLabelUserName))
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addComponent(jBtnDeslogar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -81,7 +115,14 @@ public class DashboardView extends javax.swing.JFrame implements Observer {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jBtnDeslogarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnDeslogarMouseClicked
+        // fazer o handleEvent do controller
+        controller.handleEvent(evt);
+    }//GEN-LAST:event_jBtnDeslogarMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jBtnDeslogar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelText;
     private javax.swing.JLabel jLabelUserName;
     private javax.swing.JPanel jPanel1;
