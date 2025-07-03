@@ -111,6 +111,12 @@ public class Model {
     }
     
     // metodo para deslogar o usuario (professorAutenticado = null)
+    public void logoutUsuario() {
+        if (professorAutenticado != null) {
+            this.professorAutenticado = null;
+            notifica();
+        }
+    }
     
     public String getUsuarioAutenticado() {
         if (professorAutenticado != null)

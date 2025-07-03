@@ -15,8 +15,19 @@ public class DashboardController implements Observer {
         }
     }
     
+    public void handleEvent(java.awt.event.MouseEvent evt) {
+        switch(evt.getComponent().getName()) {
+            case "logout":
+                model.logoutUsuario();
+                model.detachObserver(this);
+                LoginView lv = new LoginView();
+                lv.init(model);
+                view.dispose();
+                break;
+        }
+    }
+    
     @Override
     public void update() {
-        
     }
 }
