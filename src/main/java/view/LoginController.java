@@ -35,8 +35,12 @@ public class LoginController implements Observer {
                     view.dispose();
                 } catch (LoginInvalidoException e) {
                     WarningView wv = new WarningView(e.getMessage());
-                    wv.setVisible(true);
                 }
+                break;
+            case "register":
+                RegisterView rv = new RegisterView();
+                rv.init(model);
+                view.dispose();
                 break;
             case "clear":
                 view.clear();

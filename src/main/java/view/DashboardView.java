@@ -17,14 +17,11 @@ public class DashboardView extends javax.swing.JFrame implements Observer {
             controller = new DashboardController();
             controller.init(model, this);
             model.attachObserver(this);
-            this.display();
+            
+            jLabelUserName.setText(model.getUsuarioAutenticado());
+            this.setVisible(true);
         }
     }
-    
-    public void display() {
-        jLabelUserName.setText(model.getUsuarioAutenticado());
-        this.setVisible(true);
-    };
     
     @Override
     public void update() {

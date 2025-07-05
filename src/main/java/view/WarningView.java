@@ -5,6 +5,7 @@ public class WarningView extends javax.swing.JFrame {
     public WarningView(String message) {
         initComponents();
         jLabelErrorMessage.setText(message);
+        this.setVisible(true);
     }
 
     @SuppressWarnings("unchecked")
