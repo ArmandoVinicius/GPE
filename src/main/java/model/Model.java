@@ -103,10 +103,10 @@ public class Model {
                 this.professorAutenticado = professores.get(matricula);
                 notifica();
             } else {
-                throw new LoginInvalidoException("Erro: Usuário ou senha inválidos");
+                throw new LoginInvalidoException("Usuário ou senha inválidos");
             }
         } else {
-            throw new LoginInvalidoException("Erro: Usuário ou senha inválidos");
+            throw new LoginInvalidoException("Usuário ou senha inválidos");
         }
     }
     

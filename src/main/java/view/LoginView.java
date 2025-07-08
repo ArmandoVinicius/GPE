@@ -1,5 +1,6 @@
 package view;
 
+import javax.swing.JOptionPane;
 import model.Model;
 import utils.Observer;
 /**
@@ -49,6 +50,13 @@ public class LoginView extends javax.swing.JFrame implements Observer {
     
     public void showMessage(String message) {
         System.out.println(message);
+    }
+    
+    public void showDialog(String message) {
+        JOptionPane.showMessageDialog(this,
+            message,
+            "Erro no login",
+            JOptionPane.WARNING_MESSAGE);
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
